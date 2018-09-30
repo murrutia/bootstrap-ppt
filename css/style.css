@@ -1,9 +1,33 @@
 header {
-  background-color: #fee;
+  background-color: #171717;
+  position: fixed;
+  top: 0; right: 0; left: 0;
 }
+header a {
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  padding: 0 1rem;
+}
+header a:hover,
+header a.active {
+  color: #fff;
+  background-color: #777;
+  transition: all .3s;
+}
+
 main {
   background-color: #eef;
 }
+main article {
+  height: calc(100vh - 2.7rem);
+}
+main article.filler {
+  height: 2.7rem;
+}
+main article:nth-child(odd) {
+  background-color: #ccc;
+}
+
 footer {
   background-color: #efe;
 }
