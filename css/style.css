@@ -12,9 +12,37 @@ main {
 }
 main article {
   height: 100%;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
 }
-main article:nth-child(odd) {
-  background-color: #ccc;
+/*
+Pour avoir un background transparent j'ai un peu rusé en rajoutant un pseudo-objet
+(::before) que je positionne en absolu à 0px du top, left, right, bottom.
+C'est sur ce bloc que je mets un background en cover avec une opacité faible.
+*/
+main article::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 0;
+  opacity: .07;
+
+  /* https://www.alsacreations.com/astuce/lire/1216-arriere-plan-background-extensible.html */
+  background: url(/images/prince.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+#bienvenue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main article .col-sm-12:first-child {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #bbb;
 }
 
 footer {
