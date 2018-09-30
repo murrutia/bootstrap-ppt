@@ -7,9 +7,11 @@ header {
 
 main {
   background-color: #eef;
+  height: calc(100vh - 2.7rem);
+  overflow: auto;
 }
 main article {
-  height: calc(100vh - 2.7rem);
+  height: 100%;
 }
 main article:nth-child(odd) {
   background-color: #ccc;
